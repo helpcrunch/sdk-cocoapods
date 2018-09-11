@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+DEPRECATED_MSG_ATTRIBUTE("Use -HC_UserClosedChatNotification or -[HelpCrunch showFromController:delegate:]")
 @interface HC_ChatParentViewController : UIViewController
 
 - (void)donePressed;

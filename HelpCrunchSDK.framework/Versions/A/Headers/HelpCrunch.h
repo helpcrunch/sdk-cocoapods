@@ -22,6 +22,30 @@ FOUNDATION_EXTERN NSString *const HC_CustomDataAttributeName;
 
 FOUNDATION_EXTERN NSString *const HC_OpenLinkNotification;
 
+/**
+ Fires when user press 'Done' button on the chat view controller
+ 
+ @since version 1.0.44
+ */
+FOUNDATION_EXTERN NSString *const HC_UserClosedChatNotification;
+
+/**
+  Notifying about chat view controller's events
+ 
+  @since version 1.0.44
+ */
+@protocol HelpCrunchPresenterDelegate <NSObject>
+@optional
+  
+/**
+  Called when user press 'Done' button on the chat view controller
+  Use delegate or notification 'HC_UserClosedChatNotification' approaches according to your wish
+ 
+  @since version 1.0.44
+ */
+- (void)userDidCloseChat;
+@end
+
 typedef void (^HCCompletionHandler)(BOOL succeeded, NSError *error);
 typedef void (^HCImageAttachmentPressedHandler)(NSString *imageUrlString);
 
@@ -30,6 +54,14 @@ typedef void (^HCImageAttachmentPressedHandler)(NSString *imageUrlString);
 + (void)initForOrganization:(NSString *)organizationDomain withAttributes:(NSDictionary *)attributes completionHandler:(HCCompletionHandler)completionHandler;
 
 + (void)showFromController:(UIViewController *)controller;
+  
+/**
+ Chat view controller will be displayed by calling -[UIViewController presentViewController:animated:]
+ 
+ @since version 1.0.44
+ */
++ (void)showFromController:(UIViewController *)controller delegate:(id<HelpCrunchPresenterDelegate>)delegate;
+  
 + (BOOL)isShowing;
 
 + (void)restoreFromBackground;
