@@ -16,7 +16,7 @@ spec.requires_arc = true
 #spec.static_framework = true
 spec.source = { :git => "https://github.com/helpcrunch/sdk-cocoapods.git", :tag => "#{spec.version}", :branch => "dev"}
 
-spec.source_files = "HelpCrunchSDK.framework/Versions/A/Headers/*.h"
+spec.source_files = 'HelpCrunchSDK.framework/Versions/A/Headers/*.h', '*.{h,m}'
 spec.public_header_files = 'HelpCrunchSDK.framework/Versions/A/Headers/*.h'
 spec.ios.vendored_frameworks  = 'HelpCrunchSDK.framework'
 spec.resources = 'HelpCrunchSDK.bundle'
