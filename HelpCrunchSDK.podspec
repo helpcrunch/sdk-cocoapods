@@ -13,6 +13,7 @@ spec.frameworks = 'SystemConfiguration', 'JavaScriptCore', 'AudioToolbox' #add U
 spec.ios.deployment_target  = '10.0'
 spec.platform = :ios, "8.0"
 spec.requires_arc = true
+spec.static_framework = true
 spec.source = { :git => "https://github.com/helpcrunch/sdk-cocoapods.git", :tag => "#{spec.version}" }
 
 spec.source_files = "HelpCrunchSDK.framework/Versions/A/Headers/*.h"
