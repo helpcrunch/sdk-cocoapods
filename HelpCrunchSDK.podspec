@@ -16,12 +16,12 @@ spec.requires_arc = true
 spec.source = { :git => "https://github.com/helpcrunch/sdk-cocoapods.git", :tag => "#{spec.version}", :branch => "dev"}
 
 #spec.source_files = "HelpCrunchSDK.framework/Versions/A/Headers/*.h"
-#spec.public_header_files = 'HelpCrunchSDK.framework/Versions/A/Headers/*.h'
+spec.public_header_files = 'HelpCrunchSDK.framework/Versions/A/Headers/*.h'
 spec.vendored_frameworks  = 'HelpCrunchSDK.framework'
 spec.resources = 'HelpCrunchSDK.bundle'
-#spec.xcconfig            = {
-#    'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/HelpCrunchSDK/"',
-#}
+spec.xcconfig            = {
+    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/HelpCrunchSDK/',
+}
 
 spec.dependency 'Socket.IO-Client-Swift', '~> 13.3.0'
 
