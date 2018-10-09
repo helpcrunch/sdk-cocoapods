@@ -74,7 +74,7 @@ typedef void (^HCImageAttachmentPressedHandler)(NSString *imageUrlString);
 
 + (void)useDefaultAlertForRemoteNotification:(BOOL)useDefaultAlert; // Defaults to YES
 
-+ (void)updateUser:(NSDictionary *)attributes completionHandler:(HCCompletionHandler )completionHandler;
++ (void)updateUser:(NSDictionary *)attributes completionHandler:(HCCompletionHandler)completionHandler;
 + (void)customerNameRequired:(BOOL)required; // Defaults to YES.
 + (void)logout:(HCCompletionHandler)completionHandler;
 
