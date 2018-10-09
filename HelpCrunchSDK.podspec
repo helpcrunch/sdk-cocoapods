@@ -10,13 +10,12 @@ spec.module_name = 'HelpCrunchSDK'
 
 spec.frameworks = 'SystemConfiguration', 'JavaScriptCore', 'AudioToolbox' #add UserNotifications?
 
-spec.ios.deployment_target  = '10.0'
-spec.platform = :ios, "8.0"
+spec.ios.deployment_target = '10.0'
 spec.requires_arc = true
 spec.static_framework = true
-spec.source = { :git => "https://github.com/helpcrunch/sdk-cocoapods.git", :tag => "#{spec.version}" }
+spec.source = { :git => "https://github.com/helpcrunch/sdk-cocoapods.git", :tag => "#{spec.version}"}
 
-spec.source_files = "HelpCrunchSDK.framework/Versions/A/Headers/*.h"
+#spec.source_files = "HelpCrunchSDK.framework/Versions/A/Headers/*.h"
 spec.public_header_files = 'HelpCrunchSDK.framework/Versions/A/Headers/*.h'
 spec.vendored_frameworks  = 'HelpCrunchSDK.framework'
 spec.resources = 'HelpCrunchSDK.bundle'
