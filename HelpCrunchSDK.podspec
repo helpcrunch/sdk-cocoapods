@@ -6,9 +6,11 @@ spec.documentation_url = 'https://docs.helpcrunch.com/ios-sdk.html'
 spec.homepage = "https://github.com/helpcrunch/sdk-cocoapods"
 spec.license = { type: 'Apache 2.0', file: 'LICENSE' }
 spec.authors = { "Illia Vlasov" => 'vlasovia@gmail.com' }
+spec.module_name = 'HelpCrunchSDK'
 
 spec.frameworks = 'SystemConfiguration', 'JavaScriptCore', 'AudioToolbox' #add UserNotifications?
 
+spec.ios.deployment_target  = '10.0'
 spec.platform = :ios, "8.0"
 spec.requires_arc = true
 spec.source = { :git => "https://github.com/helpcrunch/sdk-cocoapods.git", :tag => "#{spec.version}" }
