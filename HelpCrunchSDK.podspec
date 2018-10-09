@@ -20,7 +20,7 @@ spec.source = { :git => "https://github.com/helpcrunch/sdk-cocoapods.git", :tag 
 spec.vendored_frameworks  = 'HelpCrunchSDK.framework'
 spec.resources = 'HelpCrunchSDK.bundle'
 spec.xcconfig            = {
-    'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/HelpCrunchSDK"',
+    'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/HelpCrunchSDK/Frameworks/"',
 }
 
 spec.dependency 'Socket.IO-Client-Swift', '~> 13.3.0'
