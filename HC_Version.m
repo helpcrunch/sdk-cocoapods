@@ -1,12 +1,16 @@
 //
 //  HC_Version.m
-//  Pods-HelpCrunchSDK_Tests
+//  HelpCrunch
 //
-//  Created by Andrii Gusarov on 10/9/18.
+//  Created by HelpCrunch on 10/9/18.
 //
 
 #import "HC_Version.h"
 
-@implementation HC_Version
+@implementation HC_Version(HelpCrunch)
+
++ (NSString *)sdkVersion {
+    return @"1.1.00";
+}
 
 @end
