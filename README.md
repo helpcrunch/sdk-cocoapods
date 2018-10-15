@@ -14,7 +14,6 @@ CocoaPods is built with Ruby and is installable with the default Ruby available 
 Using the default Ruby install can require you to use  `sudo`  when installing gems. Further installation instructions are in  [the guides](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 
 ```
-# Xcode 8 + 9
 $ sudo gem install cocoapods
 ```
 
@@ -25,6 +24,8 @@ There is also  [Mac app](https://cocoapods.org/app)  for CocoaPods. It only gets
 To integrate HelpCrunch into your Xcode project using CocoaPods, specify it in your  `Podfile`(text file named `Podfile` in your Xcode project directory):
 
 ```
+use_frameworks!
+
 target 'ProjectTargetName' do
   pod 'HelpCrunchSDK'
 end
@@ -48,7 +49,8 @@ $ open App.xcworkspace
 Now you can import your dependencies e.g.:
 
 ```
-#import <HelpCrunchSDK/HelpCrunch.h>
+#import <HelpCrunchSDK/HelpCrunch.h> // Objective C
+import HelpCrunchSDK // Swift
 ```
 ### Manual installation
 
