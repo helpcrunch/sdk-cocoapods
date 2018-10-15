@@ -1,25 +1,30 @@
 Pod::Spec.new do |spec|
 spec.name = "HelpCrunchSDK"
-spec.version = "1.0.46"
+spec.version = "1.1.00"
 spec.summary = "A perfect live chat, email automation and a super-intuitive help desk in one smart customer communication platform."
 spec.documentation_url = 'https://docs.helpcrunch.com/ios-sdk.html'
 spec.homepage = "https://github.com/helpcrunch/sdk-cocoapods"
 spec.license = { type: 'Apache 2.0', file: 'LICENSE' }
-spec.authors = { "Illia Vlasov" => 'vlasovia@gmail.com' }
+spec.authors = { "HelpCrunchSDK" => 'indo@helpcrunch.com' }
+spec.swift_version = '4.0'
+#spec.module_name = 'HelpCrunchSDK'
 
-spec.frameworks = 'SystemConfiguration', 'JavaScriptCore', 'AudioToolbox' #add UserNotifications?
+spec.frameworks = 'SystemConfiguration', 'AudioToolbox' #add UserNotifications?
 
-spec.platform = :ios, "8.0"
+spec.ios.deployment_target = '10.0'
 spec.requires_arc = true
-spec.source = { :git => "https://github.com/helpcrunch/sdk-cocoapods.git", :tag => "#{spec.version}" }
+#spec.static_framework = true
+spec.source = { :git => "https://github.com/helpcrunch/sdk-cocoapods.git", :tag => "#{spec.version}", :branch => "dev"}
 
-spec.source_files = "HelpCrunchSDK.framework/Versions/A/Headers/*.h"
+spec.source_files = 'HelpCrunchSDK.framework/Versions/A/Headers/*.h', '*.swift'
 spec.public_header_files = 'HelpCrunchSDK.framework/Versions/A/Headers/*.h'
-spec.vendored_frameworks  = 'HelpCrunchSDK.framework'
+spec.ios.vendored_frameworks  = 'HelpCrunchSDK.framework'
 spec.resources = 'HelpCrunchSDK.bundle'
 spec.xcconfig            = {
-'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/HelpCrunchSDK"',
+    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/HelpCrunchSDK/',
 }
+
+spec.dependency 'Socket.IO-Client-Swift', '~> 13.0'
 
 
 end

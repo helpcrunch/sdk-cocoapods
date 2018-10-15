@@ -22,6 +22,8 @@ FOUNDATION_EXTERN NSString *const HC_CustomDataAttributeName;
 
 FOUNDATION_EXTERN NSString *const HC_OpenLinkNotification;
 
+static NSString *const HC_SDKVersion = @"1.1.00";
+
 /**
  Fires when user press 'Done' button on the chat view controller
  
@@ -83,9 +85,8 @@ typedef void (^HCImageAttachmentPressedHandler)(NSString *imageUrlString);
 
 + (void)enableNetworkActivityIndicator:(BOOL)enable; // Defaults to NO.
 
-+ (NSString *)appVersion;
-+ (NSString *)sdkVersion;
-
 + (void)imageAttachmentPressedHandler:(HCImageAttachmentPressedHandler )handler;
+
++ (NSString *)appVersion;
 
 @end
