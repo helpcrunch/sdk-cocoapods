@@ -63,6 +63,7 @@ typedef void (^HCImageAttachmentPressedHandler)(NSString *imageUrlString);
 + (void)showFromController:(UIViewController *)controller delegate:(id<HelpCrunchPresenterDelegate>)delegate;
   
 + (BOOL)isShowing;
++ (BOOL)closeChatIfVisible;
 
 + (void)restoreFromBackground;
 
