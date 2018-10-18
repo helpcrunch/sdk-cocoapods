@@ -14,7 +14,7 @@ spec.frameworks = 'SystemConfiguration', 'AudioToolbox' #add UserNotifications?
 spec.ios.deployment_target = '10.0'
 spec.requires_arc = true
 #spec.static_framework = true
-spec.source = { :git => "https://github.com/helpcrunch/sdk-cocoapods.git", :tag => "#{spec.version}", :branch => "dev"}
+spec.source = { :git => "https://github.com/helpcrunch/sdk-cocoapods.git", :tag => "#{spec.version}"}
 
 spec.source_files = 'HelpCrunchSDK.framework/Versions/A/Headers/*.h', '*.swift'
 spec.public_header_files = 'HelpCrunchSDK.framework/Versions/A/Headers/*.h'
