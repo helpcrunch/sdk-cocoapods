@@ -22,7 +22,7 @@ FOUNDATION_EXTERN NSString *const HC_CustomDataAttributeName;
 
 FOUNDATION_EXTERN NSString *const HC_OpenLinkNotification;
 
-static NSString *const HC_SDKVersion = @"1.1.00";
+static NSString *const HC_SDKVersion = @"1.1.01";
 
 /**
  Fires when user press 'Done' button on the chat view controller
@@ -65,6 +65,7 @@ typedef void (^HCImageAttachmentPressedHandler)(NSString *imageUrlString);
 + (void)showFromController:(UIViewController *)controller delegate:(id<HelpCrunchPresenterDelegate>)delegate;
   
 + (BOOL)isShowing;
++ (BOOL)closeChatIfVisible;
 
 + (void)restoreFromBackground;
 

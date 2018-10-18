@@ -8,4 +8,4 @@
 
 import Foundation
 
-let HelpCrunchSDKVersion = "1.1.00"
+let HelpCrunchSDKVersion = "1.1.01"
