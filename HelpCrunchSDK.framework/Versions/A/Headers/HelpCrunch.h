@@ -82,6 +82,12 @@ typedef void (^HCImageAttachmentPressedHandler)(NSString *imageUrlString);
 + (void)logout:(HCCompletionHandler)completionHandler;
 
 + (NSUInteger)numberOfUnreadMessages;
+
+/**
+ Add callback on any unreadMessages changes
+
+ @param callbackBlock - will be called each time number of unread messages changes
+ */
 + (void)checkUnreadMessages:(void (^)(NSUInteger unread))callbackBlock;
 
 + (void)enableNetworkActivityIndicator:(BOOL)enable; // Defaults to NO.
