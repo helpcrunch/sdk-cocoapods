@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import HelpCrunchSDK
 
 extension HelpCrunch {
     static var sdkVersion: String {
