@@ -1,7 +1,3 @@
 import Foundation
 
-extension HelpCrunch {
-    static var sdkVersion: String {
-        return HC_SDKVersion
-    }
-}
+let HelpCrunchSDKVersion = "1.1.05"
