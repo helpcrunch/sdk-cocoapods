@@ -19,6 +19,7 @@ spec.source_files = 'HelpCrunchSDK.framework/Versions/A/Headers/*.h'
 spec.public_header_files = 'HelpCrunchSDK.framework/Versions/A/Headers/*.h'
 spec.ios.vendored_frameworks = 'HelpCrunchSDK.framework'
 spec.resources = 'HelpCrunchSDK.bundle'
+spec.module_map = 'HelpCrunchSDK.framework/module.modulemap'
 spec.preserve_paths = 'HelpCrunchSDK.framework/*'
 #spec.xcconfig = {
 #    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/HelpCrunchSDK/',
