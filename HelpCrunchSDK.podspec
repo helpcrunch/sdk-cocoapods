@@ -19,9 +19,9 @@ spec.source_files = 'HelpCrunchSDK.framework/Versions/A/Headers/*.h'
 spec.public_header_files = 'HelpCrunchSDK.framework/Versions/A/Headers/*.h'
 spec.ios.vendored_frameworks = 'HelpCrunchSDK.framework'
 spec.resources = 'HelpCrunchSDK.bundle'
-spec.xcconfig = {
-    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/HelpCrunchSDK/',
-}
+#spec.xcconfig = {
+#    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) ${PODS_ROOT}/HelpCrunchSDK/',
+#}
 
 spec.dependency 'Socket.IO-Client-Swift', '~> 13.0'
 
