@@ -23,7 +23,7 @@ FOUNDATION_EXTERN NSString *const HC_CustomDataAttributeName;
 
 FOUNDATION_EXTERN NSString *const HC_OpenLinkNotification;
 
-static NSString *const HC_SDKVersion = @"1.1.05";
+static NSString *const HC_SDKVersion = @"1.1.06";
 
 /**
  Fires when user press 'Done' button on the chat view controller
@@ -87,7 +87,7 @@ typedef void (^HCImageAttachmentPressedHandler)(NSString *imageUrlString);
 /**
  Add callback on any unreadMessages changes
 
- @param callbackBlock - will be called each time number of unread messages changes
+ @param callbackBlock - will be called each time number of unread messages changes. Could be called outside of main thread.
  */
 + (void)checkUnreadMessages:(void (^)(NSUInteger unread))callbackBlock;
 
