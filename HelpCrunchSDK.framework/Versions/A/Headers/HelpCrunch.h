@@ -1,101 +1,118 @@
-//
-//  HelpCrunch.h
-//  HelpCrunchSDK
-//
-//
-//  Copyright (c) 2015 HelpCrunch. All rights reserved.
-//
-
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-FOUNDATION_EXTERN NSString *const HC_ApplicationIdAttributeName;
-FOUNDATION_EXTERN NSString *const HC_ApplicationSecretAttributeName;
-FOUNDATION_EXTERN NSString *const HC_UserAttributeName;
-FOUNDATION_EXTERN NSString *const HC_ApplicationLogging;
+#import "HCSConfiguration.h"
+#import "HCSTheme.h"
+#import "HCSUser.h"
 
-FOUNDATION_EXTERN NSString *const HC_UserNameAttributeName;
-FOUNDATION_EXTERN NSString *const HC_UserEmailAttributeName;
-FOUNDATION_EXTERN NSString *const HC_UserPhoneAttributeName;
-FOUNDATION_EXTERN NSString *const HC_UserIdAttributeName;
-FOUNDATION_EXTERN NSString *const HC_UserSignatureAttributeName;
-FOUNDATION_EXTERN NSString *const HC_UserCompanyAttributeName;
-FOUNDATION_EXTERN NSString *const HC_CustomDataAttributeName;
-
-FOUNDATION_EXTERN NSString *const HC_OpenLinkNotification;
-
-static NSString *const HC_SDKVersion = @"1.1.07";
+#pragma mark - SDK Notification Events
 
 /**
- Fires when user press 'Done' button on the chat view controller
- 
- @since version 1.0.44
+ Called on tap on corresponding data type. URL will be in userInfo[@"data"]
  */
-FOUNDATION_EXTERN NSString *const HC_UserClosedChatNotification;
+FOUNDATION_EXTERN NSString *const HCSURLNotification;
+FOUNDATION_EXTERN NSString *const HCSImageURLNotification;
+FOUNDATION_EXTERN NSString *const HCSFileURLNotification;
 
 /**
-  Notifying about chat view controller's events
- 
-  @since version 1.0.44
+ Will be called on user's first sent message
  */
-@protocol HelpCrunchPresenterDelegate <NSObject>
-@optional
-  
-/**
-  Called when user press 'Done' button on the chat view controller
-  Use delegate or notification 'HC_UserClosedChatNotification' approaches according to your wish
- 
-  @since version 1.0.44
- */
-- (void)userDidCloseChat;
-@end
+FOUNDATION_EXTERN NSString *const HCSUserStartedChatNotification;
 
-typedef void (^HCCompletionHandler)(BOOL succeeded, NSError *error);
-typedef void (^HCImageAttachmentPressedHandler)(NSString *imageUrlString);
+/**
+ Will be called from both Welcome and Chat screens
+ */
+FOUNDATION_EXTERN NSString *const HCSUserClosedChatNotification;
+
+/**
+ Will be called each time number of unread messages changes. Could be called outside of main thread.
+ */
+FOUNDATION_EXTERN NSString *const HCSUnreadMessagesNotification;
+
+static NSString *const HCSSDKVersion = @"2.0";
+
+typedef void (^HCSCompletionHandler)(NSError * _Nullable error);
 
 @interface HelpCrunch : NSObject
 
-+ (void)initForOrganization:(NSString *)organizationDomain withAttributes:(NSDictionary *)attributes completionHandler:(HCCompletionHandler)completionHandler;
+#pragma mark - State of the SDK
 
-+ (void)showFromController:(UIViewController *)controller;
-  
 /**
- Chat view controller will be displayed by calling -[UIViewController presentViewController:animated:]
- 
- @since version 1.0.44
+ Initialize HelpCrunch sdk. You must call this method before any other SDK methods (except Theme methods)
+
+ @param configuration Organization, ApplicationId and ApplicationSecret are required parameters. Everything else - optional.
+ @param user You can apply user from beginning. If needed, use updateUser:completion method
+ @param completion Will be called when HelpCrunch SDK completed initializtion
  */
-+ (void)showFromController:(UIViewController *)controller delegate:(id<HelpCrunchPresenterDelegate>)delegate;
-  
-+ (BOOL)isShowing;
-+ (BOOL)closeChatIfVisible;
++ (void)initWithConfiguration:(HCSConfiguration *)configuration
+                         user:(HCSUser * _Nullable)user
+                   completion:(HCSCompletionHandler _Nullable)completion;
 
-+ (void)restoreFromBackground;
++ (void)bindConfiguration:(HCSConfiguration *)configuration;
++ (HCSConfiguration *)configuration;
 
+/**
+ Logout current user and remove current chat.
+ If you require some user attributes, user will be prompted with Welcome screen on next showFromController:completion: call
+ @param completion will be executed on successfull logout
+ */
++ (void)logoutWithCompletion:(HCSCompletionHandler _Nullable)completion;
+
++ (void)updateUser:(HCSUser * _Nullable)user completion:(HCSCompletionHandler)completion;
+
+/**
+ Number of unread messages. Will be 0 after [showFrom:completion] call
+ */
++ (NSUInteger)numberOfUnreadMessages;
+
+#pragma mark - Theming
+
++ (HCSTheme *)currentTheme;
++ (HCSTheme *)darkTheme;
++ (HCSTheme *)defaultTheme;
+
++ (void)bindTheme:(HCSTheme *)theme;
+
+#pragma mark - View Controllers
+
+/**
+ Returns true if Welcome or Chat view controllers currently on the screen
+ */
++ (BOOL)isVisible;
+
+/**
+ Shows Welcome or Chat view controller presented from given View Controller
+ 
+ @param viewController - controller to be presented from
+ @param completion - block, that will be executed on completion of presenting animation
+ */
++ (void)showFromController:(UIViewController *)controller completion:(HCSCompletionHandler)completionHandler;
+
+/**
+ Will dismiss HelpCrunch screens if any presented.
+ Completion block won't fire if no HelpCrunch screen presented. Use [isVisible] method to check.
+ 
+ @param completion - block, that will be executed on completion of dismissing animation.
+ */
++ (void)closeChatWithCompletion:(HCSCompletionHandler)completionHandler;
+
+#pragma mark - Push Notifications
+
+/**
+ Standard UserNotification permissions request. Use it only if you're not asking for permissions by yourself.
+ */
 + (void)registerForRemoteNotifications;
+
+/**
+ Add your push notification device token to HelpCrunch
+
+ @param deviceToken raw token data from AppDelegate's didRegisterForRemoteNotificationsWithDeviceToken: method
+ */
 + (void)setDeviceToken:(NSData *)deviceToken;
 
 + (BOOL)didReceiveRemoteNotification:(NSDictionary *)userInfo;
 + (BOOL)didReceiveRemoteNotificationWithLaunchOptions:(NSDictionary *)launchOptions;
++ (BOOL)isHelpCrunchNotification:(NSDictionary *)notification;
 
-+ (void)useDefaultAlertForRemoteNotification:(BOOL)useDefaultAlert; // Defaults to YES
-
-+ (void)updateUser:(NSDictionary *)attributes completionHandler:(HCCompletionHandler)completionHandler;
-+ (void)customerNameRequired:(BOOL)required; // Defaults to YES.
-+ (void)logout:(HCCompletionHandler)completionHandler;
-
-+ (NSUInteger)numberOfUnreadMessages;
-
-/**
- Add callback on any unreadMessages changes
-
- @param callbackBlock - will be called each time number of unread messages changes. Could be called outside of main thread.
- */
-+ (void)checkUnreadMessages:(void (^)(NSUInteger unread))callbackBlock;
-
-+ (void)enableNetworkActivityIndicator:(BOOL)enable; // Defaults to NO.
-
-+ (void)imageAttachmentPressedHandler:(HCImageAttachmentPressedHandler )handler;
-
-+ (NSString *)appVersion;
++ (void)trackEvent:(NSString *)event;
 
 @end
