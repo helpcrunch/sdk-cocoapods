@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (HCSUserAttribute *)nameAttributeAsRequired:(BOOL)required;
 + (HCSUserAttribute *)emailAttributeAsRequired:(BOOL)required;
 + (HCSUserAttribute *)companyAttributeAsRequired:(BOOL)required;
-+ (HCSUserAttribute *)phoneAttributeAsRequired:(BOOL)required;
++ (HCSUserAttribute *)phoneAttributeAsRequired:(BOOL)required NS_SWIFT_NAME(HCSUserAttribute.phoneAttribute(asRequired:));
 
 @end
 
