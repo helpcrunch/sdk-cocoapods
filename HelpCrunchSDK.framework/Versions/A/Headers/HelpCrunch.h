@@ -45,7 +45,7 @@ typedef void (^HCSCompletionHandler)(NSError * _Nullable error);
  */
 + (void)initWithConfiguration:(HCSConfiguration *)configuration
                          user:(HCSUser * _Nullable)user
-                   completion:(HCSCompletionHandler _Nullable)completion  NS_SWIFT_NAME(HelpCrunch.init(with:user:completion:));
+                   completion:(HCSCompletionHandler _Nullable)completion  NS_SWIFT_NAME(init(with:user:completion:));
 
 + (void)bindConfiguration:(HCSConfiguration *)configuration;
 + (HCSConfiguration *)configuration;
