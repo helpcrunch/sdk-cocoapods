@@ -82,10 +82,10 @@ typedef void (^HCSCompletionHandler)(NSError * _Nullable error);
 /**
  Shows Welcome or Chat view controller presented from given View Controller
  
- @param viewController - controller to be presented from
+ @param viewController - view controller to be presented from
  @param completion - block, that will be executed on completion of presenting animation
  */
-+ (void)showFromController:(UIViewController *)controller completion:(HCSCompletionHandler)completionHandler;
++ (void)showFromController:(UIViewController *)viewController completion:(HCSCompletionHandler)completion;
 
 /**
  Will dismiss HelpCrunch screens if any presented.
@@ -93,7 +93,7 @@ typedef void (^HCSCompletionHandler)(NSError * _Nullable error);
  
  @param completion - block, that will be executed on completion of dismissing animation.
  */
-+ (void)closeChatWithCompletion:(HCSCompletionHandler)completionHandler;
++ (void)closeChatWithCompletion:(HCSCompletionHandler)completion;
 
 #pragma mark - Push Notifications
 
