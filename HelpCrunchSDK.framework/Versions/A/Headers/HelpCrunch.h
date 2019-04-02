@@ -24,7 +24,7 @@ FOUNDATION_EXTERN NSString *const HC_CustomDataAttributeName;
 
 FOUNDATION_EXTERN NSString *const HC_OpenLinkNotification;
 
-static NSString *const HC_SDKVersion = @"1.1.07";
+static NSString *const HC_SDKVersion = @"1.1.08";
 
 /**
  Fires when user press 'Done' button on the chat view controller
