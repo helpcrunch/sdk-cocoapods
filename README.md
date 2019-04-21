@@ -13,10 +13,10 @@ A perfect live chat, email automation and a super-intuitive help desk in one sma
 - [Requirements](#requirements)
 - [Migration Guide](#migration-guide)
 - [Installation](#installation)
- - [CocoaPods](#cocoapods)
- - [Carthage](#carthage)
- - [Manual installation](#manual-installation)
- - [Update Info.plist](#update-infoplist)
+   - [CocoaPods](#cocoapods)
+   - [Carthage](#carthage)
+   - [Manual installation](#manual-installation)
+   - [Update Info.plist](#update-infoplist)
 - [Documentation](#documentation)
 - [License](#license)
 
@@ -40,7 +40,7 @@ CocoaPods is built with Ruby and is installable with the default Ruby available 
 
 Using the default Ruby install can require you to use  `sudo`  when installing gems. Further installation instructions are in [the guides](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 
-```sh
+```shell
 $ sudo gem install cocoapods
 ```
 
@@ -64,13 +64,13 @@ end
 
 Now you can install the dependencies in your project:
 
-```sh
+```shell
 $ pod install
 ```
 
 Make sure to always open the Xcode workspace instead of the project file when building your project:
 
-```sh
+```shell
 $ open App.xcworkspace
 ```
 
@@ -100,7 +100,7 @@ Create a Cartfile in the same directory where your .xcodeproj or .xcworkspace is
 Open Cartfile and add `github "Fishkiller/helpcrunchtestcarthage"`
 
 Run:
-```sh
+```shell
 $ carthage update --platform ios
 ```
 
