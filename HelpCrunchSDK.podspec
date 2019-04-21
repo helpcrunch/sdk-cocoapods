@@ -17,7 +17,7 @@ spec.source = { :git => "https://github.com/helpcrunch/sdk-cocoapods.git", :tag 
 spec.source_files = 'HelpCrunchSDK.framework/Versions/A/Headers/*.h'
 spec.public_header_files = 'HelpCrunchSDK.framework/Versions/A/Headers/*.h'
 spec.ios.vendored_frameworks = 'HelpCrunchSDK.framework'
-spec.resources = 'HelpCrunchSDK.bundle'
+spec.resources = 'HelpCrunchSDK.framework/Versions/A/Resources/HelpCrunchSDK.bundle'
 
 spec.dependency 'Socket.IO-Client-Swift', '~> 13.0'
 
