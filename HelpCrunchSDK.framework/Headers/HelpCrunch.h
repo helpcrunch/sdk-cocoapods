@@ -57,7 +57,7 @@ typedef void (^HCSCompletionHandler)(NSError * _Nullable error);
  */
 + (void)logoutWithCompletion:(HCSCompletionHandler _Nullable)completion;
 
-+ (void)updateUser:(HCSUser * _Nullable)user completion:(HCSCompletionHandler)completion;
++ (void)updateUser:(HCSUser * _Nullable)user completion:(HCSCompletionHandler _Nullable)completion;
 
 /**
  Number of unread messages. Will be 0 after [showFrom:completion] call
@@ -85,7 +85,7 @@ typedef void (^HCSCompletionHandler)(NSError * _Nullable error);
  @param viewController - view controller to be presented from
  @param completion - block, that will be executed on completion of presenting animation
  */
-+ (void)showFromController:(UIViewController *)viewController completion:(HCSCompletionHandler)completion;
++ (void)showFromController:(UIViewController *)viewController completion:(HCSCompletionHandler _Nullable)completion;
 
 /**
  Will dismiss HelpCrunch screens if any presented.
@@ -93,7 +93,7 @@ typedef void (^HCSCompletionHandler)(NSError * _Nullable error);
  
  @param completion - block, that will be executed on completion of dismissing animation.
  */
-+ (void)closeChatWithCompletion:(HCSCompletionHandler)completion;
++ (void)closeChatWithCompletion:(HCSCompletionHandler _Nullable)completion;
 
 #pragma mark - Push Notifications
 
