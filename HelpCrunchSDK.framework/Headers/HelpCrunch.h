@@ -116,3 +116,4 @@ typedef void (^HCSCompletionHandler)(NSError * _Nullable error);
 + (void)trackEvent:(NSString *)event;
 
 @end
+
