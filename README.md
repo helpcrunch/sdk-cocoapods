@@ -13,11 +13,11 @@ A perfect live chat, email automation and a super-intuitive help desk in one sma
 - [Requirements](#requirements)
 - [Migration Guide](#migration-guide)
 - [Installation](#installation)
--- [CocoaPods](#cocoapods)
--- [Carthage](#carthage)
--- [Manual installation](#manual-installation)
--- [Update Info.plist](#update-infoplist)
-- [Documantation](#documentation)
+ - [CocoaPods](#cocoapods)
+ - [Carthage](#carthage)
+ - [Manual installation](#manual-installation)
+ - [Update Info.plist](#update-infoplist)
+- [Documentation](#documentation)
 - [License](#license)
 
 ## Requirements
@@ -32,7 +32,7 @@ If you use older pre v2.0 versions, please update with our [migration giude](htt
 
 ## Installation
 
-### CocoaPods (https://cocoapods.org)
+### [CocoaPods](https://cocoapods.org)
 
 CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects. It has over 43 thousand libraries and is used in over 3 million apps. CocoaPods can help you scale your projects elegantly.
 
@@ -85,7 +85,7 @@ Swift:
 import HelpCrunchSDK
 ```
 
-### Carthage (https://github.com/Carthage/Carthage)
+### [Carthage](https://github.com/Carthage/Carthage)
 
 Carthage is another way to add frameworks to your Cocoa application.
 
@@ -117,7 +117,9 @@ In order to send files and photos, you need to have `NSCameraUsageDescription`, 
 These entries are required by Apple. User will be prompted for the Camera/Photo Library permissions with your provided text only when he tries to use the camera or open or save image to the Photo Library. 
 
 `NSCameraUsageDescription` - When user tries to use Camera
+
 `NSPhotoLibraryUsageDescription` - When user tries to open Photo Library
+
 `NSPhotoLibraryAddUsageDescription` - When user tries to save image to the Photo Library
 
 ## Documentation
