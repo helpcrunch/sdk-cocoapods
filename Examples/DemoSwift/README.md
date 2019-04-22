@@ -18,8 +18,8 @@ Just clone the project and open console. You will need [CocoaPods](https://cocoa
 
 After that just open in console folder with cloned project and run next command:
 
-```
-pod install
+```shell
+$ pod install
 ```
 
 Wait until it installs all dependencies and you ready to go!
@@ -32,7 +32,7 @@ Now you can open
 This is our test project. Open **AppDelegate.h**. Here we are setting up and configuring SDK in the setupHelpcrunch(:)] method.
 
 First of all you need to set **Organzation**, **ApplicationId** and **ApplicationSecret**, which you got from creating iOS app in your HelpCrunch account, to appropriate variables:
-```
+```swift
     let organization: String = ""
     let applicationId: String = ""
     let applicationSecret: String = "" 
@@ -43,7 +43,7 @@ Thats all, now you can launch your app and play with HelpCrunch chat.
 ### Logout
 
 We created HCSUser at the start of the application so even if you try to logout - nothing happens. If you want to play with logout, comment or delete next lines:
-```
+```swift
     let user = HCSUser()
     user.userId = "testId"
     user.name = "SDK Test User"
@@ -51,7 +51,7 @@ We created HCSUser at the start of the application so even if you try to logout 
 ```
 
 and change initialization method to:
-```
+```swift
     HelpCrunch.initWith(configuration,
                         user: nil) { (error) in
                             print("End of SDK initialization")
@@ -61,7 +61,7 @@ and change initialization method to:
 ### Welcome screen
 
 If you want to try our Welcome screen, where you ask user to provide some information, remove HCSUser as it said in Logout section before and uncomment next line:
-```
+```swift
     setupWelcomeScreen(configuration: configuration)
 ```
 
@@ -70,6 +70,6 @@ In this method you can add/remove any user attributes you want. For more informa
 ## Theming
 
 You can check our standard and dark themes simply by clicking on them in the main menu before you start chat. If you want to play with custom theme, that we provided for you as example, check this method in ViewController.m:
-```
+```swift
     func setupWelcomeScreen(configuration: HCSConfiguration)
 ```

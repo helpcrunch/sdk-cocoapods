@@ -17,8 +17,8 @@ First of all you need to create iOS app in your account. [Here](https://docs.hel
 Just clone the project and open console. You will need [CocoaPods](https://cocoapods.org/) installed on your machine. If you still don't have it, please visit [this link](https://guides.cocoapods.org/using/getting-started.html). It will help you install CocoaPods on your machine. 
 
 After that just open folder with cloned project in console and run next command:
-```
-pod install
+```shell
+$ pod install
 ```
 
 Wait until it installs every dependency and you ready to go!
@@ -31,7 +31,7 @@ Now you can open
 This is our test project. Open **AppDelegate.h**. Here we are setting up and configuring SDK in the -[setupHelpcrunchWithLaunchOptions:] method.
 
 First of all you need to set **Organzation**, **ApplicationId** and **ApplicationSecret**, which you got from creating iOS app in your HelpCrunch account, to appropriate variables:
-```
+```objective-c
     NSString *organization = @"";
     NSString *applicationId = @"";
     NSString *applicationSecret = @""
@@ -42,7 +42,7 @@ Thats all, now you can launch your app and play with HelpCrunch chat.
 ### Logout
 
 We created HCSUser at the start of the application so even if you try to logout - nothing happens. If you want to play with logout, comment or delete next lines:
-```
+```objective-c
     HCSUser *user = [HCSUser new];
     user.userId = @"testId";
     user.name = @"SDK Test User";
@@ -50,7 +50,7 @@ We created HCSUser at the start of the application so even if you try to logout 
 ```
 
 and change initialization method to:
-```
+```objective-c
     [HelpCrunch initWithConfiguration:configuration
                                  user:nil
                            completion:^(NSError * _Nullable error) {
@@ -61,7 +61,7 @@ and change initialization method to:
 ### Welcome screen
 
 If you want to try our Welcome screen, where you ask user to provide some information, remove HCSUser as it said in Logout section before and uncomment next line:
-```
+```objective-c
 	[self setupWelcomeScreen:configuration];
 ```
 
@@ -70,6 +70,6 @@ In this method you can add/remove any user attributes you want. For more informa
 ## Theming
 
 You can check our standard and dark themes simply by clicking on them in the main menu before you start chat. If you want to play with custom theme, that we provided for you as example, check this method in ViewController.m:
-```
+```objective-c
 	- (IBAction)buttonSetCustomThemeTouched:(id)sender
 ```
