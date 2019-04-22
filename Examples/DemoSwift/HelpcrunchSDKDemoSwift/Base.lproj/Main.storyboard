@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HelpcrunchSDKDemoSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sz-Rb-xnu">
+                                <rect key="frame" x="145" y="144" width="85" height="30"/>
+                                <state key="normal" title="Launch chat"/>
+                                <connections>
+                                    <action selector="buttonLaunchTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oyf-DY-3Sg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKh-Zd-D1V">
+                                <rect key="frame" x="126.5" y="194" width="122" height="30"/>
+                                <state key="normal" title="Set default theme"/>
+                                <connections>
+                                    <action selector="buttonSetDefaultThemeTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h6U-cC-eaI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Kk-Zj-mgf">
+                                <rect key="frame" x="135" y="244" width="105" height="30"/>
+                                <state key="normal" title="Set dark theme"/>
+                                <connections>
+                                    <action selector="buttonSetDarkThemeTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="McC-rz-E8K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69u-ck-3iJ">
+                                <rect key="frame" x="163.5" y="344" width="48" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="buttonLogoutTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yta-BM-WIb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HelpCrunch SDK Demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsx-eW-wZD">
+                                <rect key="frame" x="75.5" y="80" width="224" height="26"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jO-BB-uog">
+                                <rect key="frame" x="124.5" y="294" width="126" height="30"/>
+                                <state key="normal" title="Set custom theme"/>
+                                <connections>
+                                    <action selector="buttonSetCustomThemeTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VH3-g0-xIp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jsx-eW-wZD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5r3-wf-zs8"/>
+                            <constraint firstItem="7jO-BB-uog" firstAttribute="top" secondItem="5Kk-Zj-mgf" secondAttribute="bottom" constant="20" id="6tk-du-Rqh"/>
+                            <constraint firstItem="5Kk-Zj-mgf" firstAttribute="top" secondItem="tKh-Zd-D1V" secondAttribute="bottom" constant="20" id="9IW-PS-PSY"/>
+                            <constraint firstItem="69u-ck-3iJ" firstAttribute="top" secondItem="7jO-BB-uog" secondAttribute="bottom" constant="20" id="AxG-Gq-kHd"/>
+                            <constraint firstItem="tKh-Zd-D1V" firstAttribute="top" secondItem="0Sz-Rb-xnu" secondAttribute="bottom" constant="20" id="VXy-V4-bvQ"/>
+                            <constraint firstItem="5Kk-Zj-mgf" firstAttribute="centerX" secondItem="tKh-Zd-D1V" secondAttribute="centerX" id="cAC-x3-XTS"/>
+                            <constraint firstItem="0Sz-Rb-xnu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="124" id="daU-hf-VzE"/>
+                            <constraint firstItem="0Sz-Rb-xnu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jxy-hg-jf4"/>
+                            <constraint firstItem="69u-ck-3iJ" firstAttribute="centerX" secondItem="5Kk-Zj-mgf" secondAttribute="centerX" id="m4n-Cq-jIK"/>
+                            <constraint firstItem="jsx-eW-wZD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="oW1-BP-M7E"/>
+                            <constraint firstItem="tKh-Zd-D1V" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="of0-dP-R7F"/>
+                            <constraint firstItem="7jO-BB-uog" firstAttribute="centerX" secondItem="5Kk-Zj-mgf" secondAttribute="centerX" id="xEY-fz-n8C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="logoutButton" destination="69u-ck-3iJ" id="RTP-OQ-Z7r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
