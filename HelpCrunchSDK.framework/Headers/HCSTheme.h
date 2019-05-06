@@ -12,8 +12,13 @@ typedef NS_ENUM(NSUInteger, HCSThemeBrandingType) {
 
 @property (nonatomic, strong) UIColor *mainColor;
 
-@property (nonatomic) BOOL isNavigationBarBottomLineVisible;
+@property (nonatomic, strong) UIColor *chatBackgroundColor;
+@property (nonatomic, strong) UIColor *chatDateColor;
+
+@property (nonatomic, strong) UIColor *navigationBarTextColor;
+@property (nonatomic, strong) UIColor *navigationBarBackgroundColor;
 @property (nonatomic, strong) UIColor *navigationBarBottomLineColor;
+@property (nonatomic) BOOL isNavigationBarBottomLineVisible;
 
 @property (nonatomic, strong) UIColor *messageIncomingBubbleColor;
 @property (nonatomic, strong) UIColor *messageIncomingFontColor;
@@ -38,7 +43,7 @@ typedef NS_ENUM(NSUInteger, HCSThemeBrandingType) {
 @property (nonatomic, strong) UIColor *messageOutgoingCodeFontColor;
 @property (nonatomic, strong) UIColor *messageOutgoingCodeBackgroundColor;
 
-@property (nonatomic, strong) UIColor *messageDateColor;
+@property (nonatomic, strong) UIColor *messageTimeColor;
 
 @property (nonatomic, strong) UIImage *attachmentIconImage;
 @property (nonatomic, strong) UIImage *sendButtonIconImage;
@@ -49,11 +54,9 @@ typedef NS_ENUM(NSUInteger, HCSThemeBrandingType) {
 @property (nonatomic, strong) NSString *sendButtonText;
 @property (nonatomic, strong) UIColor *sendButtonColor;
 
-@property (nonatomic, strong) UIColor *chatBackgroundColor;
-@property (nonatomic, strong) UIColor *navigationBarTextColor;
+@property (nonatomic, strong) UIColor *prechatFormTopMessageBackgroundColor;
+@property (nonatomic, strong) UIColor *prechatFormTopMessageFontColor;
 
-@property (nonatomic, strong) UIColor *welcomeTopMessageBackgroundColor;
-@property (nonatomic, strong) UIColor *welcomeTopMessageFontColor;
 @property (nonatomic, strong) UIColor *inputBackgroundColor;
 @property (nonatomic, strong) UIColor *inputTextFieldBackgroundColor;
 @property (nonatomic, strong) UIColor *inputTextFieldBorderColor;

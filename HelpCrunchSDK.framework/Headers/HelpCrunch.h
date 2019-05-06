@@ -19,7 +19,7 @@ FOUNDATION_EXTERN NSString *const HCSFileURLNotification;
 FOUNDATION_EXTERN NSString *const HCSUserStartedChatNotification;
 
 /**
- Will be called from both Welcome and Chat screens
+ Will be called from both Prechat Form and Chat screens
  */
 FOUNDATION_EXTERN NSString *const HCSUserClosedChatNotification;
 
@@ -52,7 +52,7 @@ typedef void (^HCSCompletionHandler)(NSError * _Nullable error);
 
 /**
  Logout current user and remove current chat.
- If you require some user attributes, user will be prompted with Welcome screen on next showFromController:completion: call
+ If you require some user attributes, user will be prompted with Prechat Form screen on next showFromController:completion: call
  @param completion will be executed on successfull logout
  */
 + (void)logoutWithCompletion:(HCSCompletionHandler _Nullable)completion;
@@ -75,12 +75,12 @@ typedef void (^HCSCompletionHandler)(NSError * _Nullable error);
 #pragma mark - View Controllers
 
 /**
- Returns true if Welcome or Chat view controllers currently on the screen
+ Returns true if Prechat Form or Chat view controllers currently on the screen
  */
 + (BOOL)isVisible;
 
 /**
- Shows Welcome or Chat view controller presented from given View Controller
+ Shows Prechat Form or Chat view controller presented from given View Controller
  
  @param viewController - view controller to be presented from
  @param completion - block, that will be executed on completion of presenting animation

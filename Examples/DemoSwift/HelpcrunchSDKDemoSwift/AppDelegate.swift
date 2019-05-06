@@ -19,9 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setupHelpcrunch(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-        let organization: String = ""
-        let applicationId: String = ""
-        let applicationSecret: String = "";
+//        let organization: String = ""
+//        let applicationId: String = ""
+//        let applicationSecret: String = "";
+        let organization: String = "mobile"
+        let applicationId: String = "1580"
+        let applicationSecret: String = "3DJ51cmMVWGe5fI0VYmFK+CjJ0TdkxElKBIHvKvUuYvS86T/guV7Ddex2EMCVKy99mF/g6JZHkhv6c8lj1nNoA==";
 
         let configuration = HCSConfiguration(forOrganization: organization,
                                              applicationId: applicationId,
