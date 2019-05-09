@@ -87,6 +87,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="launchButton" destination="pbT-eD-gmH" id="QIE-Vb-BPL"/>
+                        <outlet property="logoutButton" destination="A7c-qi-uJK" id="aW8-t0-dHG"/>
                         <outlet property="preformSwitch" destination="jbz-pY-cOO" id="8Eh-Bq-jih"/>
                         <outlet property="tableView" destination="Ue7-k1-AjE" id="EBy-6a-aLt"/>
                     </connections>
