@@ -76,13 +76,13 @@ class ViewController: UIViewController {
     @IBAction func buttonLogoutTouched(_ sender: UIButton) {
         view.isUserInteractionEnabled = false
         
-        sender.isEnabled = true
+        sender.isEnabled = false
         sender.setTitle("Please wait", for: .normal)
         
         HelpCrunch.logout { (error) in
             self.view.isUserInteractionEnabled = true
             
-            sender.isEnabled = false
+            sender.isEnabled = true
             sender.setTitle("Logout", for: .normal)
         }
     }
