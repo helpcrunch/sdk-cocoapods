@@ -50,6 +50,8 @@ typedef void (^HCSCompletionHandler)(NSError * _Nullable error);
 + (void)bindConfiguration:(HCSConfiguration *)configuration;
 + (HCSConfiguration *)configuration;
 
++ (BOOL)isInitialized;
+
 /**
  Logout current user and remove current chat.
  If you require some user attributes, user will be prompted with Prechat Form screen on next showFromController:completion: call
